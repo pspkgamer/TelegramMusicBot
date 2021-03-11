@@ -1,16 +1,14 @@
+FROM debian:latest
 
-FROM nikolaik/python-nodejs:python3.9-nodejs15-slim
-
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update -y && \
-    apt-get install -yqq \
-        python3-pip \
-        git \
-        ffmpeg && \
-    git clone https://github.com/sangramghangale47/TelegramMusicBot && \
-    cd TelegramMusicBot && \
-    git clone https://github.com/pytgcalls/pytgcalls.git && \
+RUN apt update && apt upgrade -y
+RUN apt install git curl python3-pip ffmpeg -y
+RUN pip3 install -U pip
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
+RUN apt-get install -y nodejs
+RUN npm i -g npm
+RUN mkdir /app/
+WORKDIR /app/
+RUN git clone https://github.com/pytgcalls/pytgcalls && \
     cd pytgcalls && \
     npm install && \
     npm run prepare && \
@@ -18,9 +16,7 @@ RUN apt-get update -y && \
     npm install && \
     cd ../../ && \
     pip3 install -r requirements.txt && \
-    cp -r ./pytgcalls /TelegramMusicBot/ && \
-    cd /TelegramMusicBot && \
-    pip3 install -U -r requirements.txt
-
-WORKDIR /TelegramMusicBot
-CMD ["python3" "main.py"]
+    cd ../
+COPY . /app/
+RUN pip3 install -r requirements.txt
+CMD python3 main.py
