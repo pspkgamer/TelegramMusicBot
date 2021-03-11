@@ -8,9 +8,9 @@ RUN apt-get update -y && \
         python3-pip \
         git \
         ffmpeg && \
-    git clone https://github.com/sangramghangale47/MusicBot && \
+    git clone https://github.com/sangramghangale47/TelegramMusicBot && \
     cd TelegramMusicBot && \
-    git clone https://github.com/pytgcalls/pytgcalls.git && \
+    git clone https://github.com/sangramghangale47/pytgcalls && \
     cd pytgcalls && \
     npm install && \
     npm run prepare && \
