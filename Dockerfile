@@ -10,7 +10,7 @@ RUN apt-get update -y && \
         ffmpeg && \
     git clone https://github.com/sangramghangale47/TelegramMusicBot && \
     cd TelegramMusicBot && \
-    git clone https://github.com/sangramghangale47/pytgcalls && \
+    git clone https://github.com/pytgcalls/pytgcalls.git && \
     cd pytgcalls && \
     npm install && \
     npm run prepare && \
