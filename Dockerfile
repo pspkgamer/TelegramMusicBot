@@ -8,7 +8,7 @@ RUN apt-get update -y && \
         python3-pip \
         git \
         ffmpeg && \
-    git clone https://github.com/subinps/MusicPlayer-Heroku.git && \
+    git clone https://github.com/sangramghangale47/TelegramMusicBot && \
     cd MusicPlayer-Heroku && \
     git clone https://github.com/pytgcalls/pytgcalls.git && \
     cd pytgcalls && \
@@ -18,9 +18,9 @@ RUN apt-get update -y && \
     npm install && \
     cd ../../ && \
     pip3 install -r requirements.txt && \
-    cp -r ./pytgcalls /MusicPlayer-Heroku/ && \
-    cd /MusicPlayer-Heroku && \
+    cp -r ./pytgcalls /TelegramMusicBot/ && \
+    cd /TelegramMusicBot && \
     pip3 install -U -r requirements.txt
 
-WORKDIR /MusicPlayer-Heroku
+WORKDIR /TelegramMusicBot
 CMD ["python3" "main.py"]
