@@ -18,7 +18,7 @@ async def start_(client: Client, message: Message):
        f"""🥳🤩 Hello {message.from_user.first_name}!
 
  😘😍Sangram Ghangale Music bot don't allow to play music in your group through the new voice chats recently introduce by telegram
-❌don't add the bot and your group and read the command list to find out how to use it!!
+❌don't add the bot in your group and read the command list to find out how to use it!!
 
 😍Bot developer - @sangramghangale
 
