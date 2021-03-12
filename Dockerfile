@@ -10,7 +10,7 @@ RUN apt-get update -y && \
         ffmpeg && \
     git clone https://github.com/sangramghangale47/TelegramMusicBot && \
     cd MusicPlayer-Heroku && \
-    git clone https://github.com/pytgcalls/pytgcalls.git && \
+    git clone https://github.com/sangramghangale47/pytgcalls && \
     cd pytgcalls && \
     npm install && \
     npm run prepare && \
